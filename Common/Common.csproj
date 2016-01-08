@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{459F9B68-3B5A-4FBA-8151-1BCF9A5C82D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utility</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FULL_VERSION</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptableData\DslAction.cs" />
+    <Compile Include="ScriptableData\DslConstants.cs" />
+    <Compile Include="ScriptableData\DslError.cs" />
+    <Compile Include="ScriptableData\DslObfuscation.cs" />
+    <Compile Include="ScriptableData\DslParser.cs" />
+    <Compile Include="ScriptableData\DslString.cs" />
+    <Compile Include="ScriptableData\DslToken.cs" />
+    <Compile Include="ScriptableData\ScriptableData.cs" />
+    <Compile Include="SkillInstance\ISkillTriger.cs" />
+    <Compile Include="SkillInstance\ISkillTrigerFactory.cs" />
+    <Compile Include="SkillInstance\SkillConfigManager.cs" />
+    <Compile Include="SkillInstance\SkillInstance.cs" />
+    <Compile Include="SkillInstance\SkillTrigerManager.cs" />
+    <Compile Include="Support\Logger.cs" />
+    <Compile Include="Support\MyAction.cs" />
+    <Compile Include="Support\SubscribeSystem\PublishSubscribeSystem.cs" />
+    <Compile Include="Support\TaskDispatcher\AsyncActionProcessor.cs" />
+    <Compile Include="Support\TaskDispatcher\DelayActionProcessor.cs" />
+    <Compile Include="Support\TaskDispatcher\IActionQueue.cs" />
+    <Compile Include="Support\TaskDispatcher\MyTaskDispatcher.cs" />
+    <Compile Include="Support\TaskDispatcher\MyThread.cs" />
+    <Compile Include="Support\TaskDispatcher\ObjectPool.cs" />
+    <Compile Include="Support\TaskDispatcher\PoolAllocatedAction.cs" />
+    <Compile Include="Support\TypedDataCollection.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
