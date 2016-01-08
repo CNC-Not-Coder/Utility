@@ -15,12 +15,9 @@ namespace MyUtility
 
         private AsyncActionProcessor m_ActionQueue = null;
 
-        public delegate void LogHandlerDelegate(string format, params object[] ps);
-        public static LogHandlerDelegate LogErrorHandler = null;
-
         private void LogError(string format, params object[] ps)
         {
-            if (LogErrorHandler != null) LogErrorHandler(format, ps);
+            Logger.Error(format, ps);
         }
         public MyThread()
         {

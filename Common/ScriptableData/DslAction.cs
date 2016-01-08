@@ -45,7 +45,7 @@ namespace MyUtility
         internal override void predict(short production_number)
         {
 #if FULL_VERSION
-            //LogSystem.Info("{0}", DslString.GetProductionName(production_number));
+            Logger.Info("{0}", DslString.GetProductionName(production_number));
 #endif
         }
         internal override void execute(int number)

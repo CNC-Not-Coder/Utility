@@ -9,17 +9,13 @@ namespace MyUtility
         private Queue<MyAction> m_Actions = new Queue<MyAction>();
         private TypedDataCollection m_ActionPools = new TypedDataCollection();
 
-        public delegate void LogHandlerDelegate(string format, params object[] ps);
-        public static LogHandlerDelegate LogErrorHandler = null;
-        public static LogHandlerDelegate LogInfoHandler = null;
-
         private void LogInfo(string format, params object[] ps)
         {
-            if (LogInfoHandler != null) LogInfoHandler(format, ps);
+            Logger.Info(format, ps);
         }
         private void LogError(string format, params object[] ps)
         {
-            if (LogErrorHandler != null) LogErrorHandler(format, ps);
+            Logger.Error(format, ps);
         }
         public int CurActionNum
         {

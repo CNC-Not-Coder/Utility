@@ -28,13 +28,9 @@ namespace MyUtility
             {
                 triger = factory.Create(trigerConfig);
             }
-            //else if (DashFire.GlobalVariables.Instance.IsClient)
-            //{
-            //    DashFire.LogSystem.Error("CreateTriger failed, unkown type:{0}", type);
-            //}
             if (null != triger)
             {
-                //DashFire.LogSystem.Debug("CreateTriger, type:{0} triger:{1}", type, triger.GetType().Name);
+                Logger.Info("CreateTriger, type:{0} triger:{1}", type, triger.GetType().Name);
             }
             return triger;
         }

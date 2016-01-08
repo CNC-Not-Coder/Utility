@@ -123,7 +123,7 @@ namespace MyUtility
                 {
                     m_LoadedTrigers.Add(triger);
 
-                    //Logger.Debug("AddTriger:{0}", triger.GetType().Name);
+                    Logger.Info("AddTriger:{0}", triger.GetType().Name);
                 }
             }
         }
@@ -510,7 +510,7 @@ namespace MyUtility
             {
                 Logger.Error("SkillInstance::Init, isn't skill DSL");
             }
-            //Logger.Debug("SkillInstance.Init section num:{0} {1}", m_Sections.Count, ret);
+            Logger.Info("SkillInstance.Init section num:{0} {1}", m_Sections.Count, ret);
             return ret;
         }
 
@@ -690,8 +690,6 @@ namespace MyUtility
                 m_CurSectionDuration = section.Duration * 1000;
                 m_CurSectionTime = 0;
                 section.Prepare();
-
-                //Logger.Debug("ChangeToSection:{0} duration:{1}", index, m_CurDuration);
             }
         }
 

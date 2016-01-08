@@ -819,7 +819,7 @@ namespace MyUtility
         {
 #if FULL_VERSION
             string content = File.ReadAllText(file);
-            //DashFire.LogSystem.Debug("ScriptableDataFile.Load {0}:\n{1}", file, content);
+            Logger.Info("ScriptableDataFile.Load {0}:\n{1}", file, content);
             return LoadFromString(content, file);
 #else
             return false;

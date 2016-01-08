@@ -12,7 +12,6 @@ namespace MyUtility
     public sealed class PublishSubscribeSystem
     {
         private Dictionary<string, Delegate> subscribers_ = new Dictionary<string, Delegate>();
-        public delegate void LogHandlerDelegate(string format, params object[] ps);
         private class ReceiptInfo
         {
             public string name_;
@@ -24,14 +23,6 @@ namespace MyUtility
                 delegate_ = d;
             }
         }
-        /// <summary>
-        /// 这个委托需要注册者保证在本线程正确执行
-        /// </summary>
-        public static LogHandlerDelegate LogInfoHandler = null;
-        /// <summary>
-        /// 这个委托需要注册者保证在本线程正确执行
-        /// </summary>
-        public static LogHandlerDelegate LogErrorHandler = null;
 
         public object Subscribe(string ev_name, string group, MyAction subscriber) { return AddSubscriber(ev_name, group, subscriber); }
         public object Subscribe<T0>(string ev_name, string group, MyAction<T0> subscriber) { return AddSubscriber(ev_name, group, subscriber); }
@@ -108,11 +99,11 @@ namespace MyUtility
 
         private void LogInfo(string format, params object[] ps)
         {
-            if (LogInfoHandler != null) LogInfoHandler(format, ps);
+            Logger.Info(format, ps);
         }
         private void LogError(string format, params object[] ps)
         {
-            if (LogErrorHandler != null) LogErrorHandler(format, ps);
+            Logger.Error(format, ps);
         }
     }
 }
