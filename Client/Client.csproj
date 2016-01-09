@@ -31,9 +31,47 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>libs\UnityEngine.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\GfxSystem.cs" />
+    <Compile Include="Interface\LogicSystem.cs" />
+    <Compile Include="Interface\ResourceSystem.cs" />
+    <Compile Include="Interface\SharedGameObjectInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skill\ColliderScript.cs" />
+    <Compile Include="Skill\ColliderTriggerUtility.cs" />
+    <Compile Include="Skill\ScriptableDataUtility.cs" />
+    <Compile Include="Skill\SkillDamageManager.cs" />
+    <Compile Include="Skill\TriggerUtil.cs" />
+    <Compile Include="Skill\Trigger\AnimationTriger.cs" />
+    <Compile Include="Skill\Trigger\CameraTrigger.cs" />
+    <Compile Include="Skill\Trigger\CheckOnGroundTrigger.cs" />
+    <Compile Include="Skill\Trigger\ChooseTargetTrigger.cs" />
+    <Compile Include="Skill\Trigger\ClearDamagePoolTrigger.cs" />
+    <Compile Include="Skill\Trigger\ClearDamageStateTrigger.cs" />
+    <Compile Include="Skill\Trigger\ColliderDamageTriger.cs" />
+    <Compile Include="Skill\Trigger\AreaDamageTriger.cs" />
+    <Compile Include="Skill\Trigger\CrossSummonMoveTrigger.cs" />
+    <Compile Include="Skill\Trigger\DestroySelfTrigger.cs" />
+    <Compile Include="Skill\Trigger\DestroySummonObjectTrigger.cs" />
+    <Compile Include="Skill\Trigger\EffectTrigger.cs" />
+    <Compile Include="Skill\Trigger\FaceToTargetTrigger.cs" />
+    <Compile Include="Skill\Trigger\GeneralTrigger.cs" />
+    <Compile Include="Skill\Trigger\GotoSectionTrigger.cs" />
+    <Compile Include="Skill\Trigger\ImpactTrigger.cs" />
+    <Compile Include="Skill\Trigger\LockFrameTriger.cs" />
+    <Compile Include="Skill\Trigger\MovementTrigger.cs" />
+    <Compile Include="Skill\Trigger\RotateTrigger.cs" />
+    <Compile Include="Skill\Trigger\SetChildVisibleTrigger.cs" />
+    <Compile Include="Skill\Trigger\SetEnableTrigger.cs" />
+    <Compile Include="Skill\Trigger\SetTransformTrigger.cs" />
+    <Compile Include="Skill\Trigger\SoundTrigger.cs" />
+    <Compile Include="Skill\Trigger\StopCurSectionTrigger.cs" />
+    <Compile Include="Skill\Trigger\StopEffectTrigger.cs" />
+    <Compile Include="Skill\Trigger\SummonObjectTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
@@ -41,6 +79,7 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

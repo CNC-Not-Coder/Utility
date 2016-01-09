@@ -33,6 +33,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Define\EntityDefine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScriptableData\DslAction.cs" />
     <Compile Include="ScriptableData\DslConstants.cs" />
@@ -47,8 +48,10 @@
     <Compile Include="SkillInstance\SkillConfigManager.cs" />
     <Compile Include="SkillInstance\SkillInstance.cs" />
     <Compile Include="SkillInstance\SkillTrigerManager.cs" />
+    <Compile Include="Support\LinkedListDictionary.cs" />
     <Compile Include="Support\Logger.cs" />
     <Compile Include="Support\MyAction.cs" />
+    <Compile Include="Support\MyDictionary.cs" />
     <Compile Include="Support\SubscribeSystem\PublishSubscribeSystem.cs" />
     <Compile Include="Support\TaskDispatcher\AsyncActionProcessor.cs" />
     <Compile Include="Support\TaskDispatcher\DelayActionProcessor.cs" />
