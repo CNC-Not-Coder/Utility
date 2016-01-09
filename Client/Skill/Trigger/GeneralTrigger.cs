@@ -5,6 +5,43 @@ using MyUtility;
 namespace Client.SkillTrigger
 {
     /// <summary>
+    /// movecontrol(is_skill_control_move);
+    /// </summary>
+    internal class MoveControlTriger : AbstractSkillTriger
+    {
+        public override ISkillTriger Clone()
+        {
+            MoveControlTriger triger = new MoveControlTriger();
+            triger.m_IsControlMove = m_IsControlMove;
+            return triger;
+        }
+
+        public override bool Execute(object sender, SkillInstance instance, long delta, long curSectionTime)
+        {
+            GameObject obj = sender as GameObject;
+            if (null != obj)
+            {
+                if (m_IsControlMove)
+                    LogicSystem.NotifyGfxMoveControlStart(obj, instance.SkillId, true);
+                else
+                    LogicSystem.NotifyGfxMoveControlFinish(obj, instance.SkillId, true);
+                instance.IsControlMove = m_IsControlMove;
+            }
+            return false;
+        }
+
+        protected override void Load(CallData callData)
+        {
+            int num = callData.GetParamNum();
+            if (num > 0)
+            {
+                m_IsControlMove = (callData.GetParamId(0) == "true");
+            }
+        }
+
+        private bool m_IsControlMove = false;
+    }
+    /// <summary>
     /// timescale(scale,start_time,end_time);
     /// </summary>
     internal class TimeScaleTriger : AbstractSkillTriger
