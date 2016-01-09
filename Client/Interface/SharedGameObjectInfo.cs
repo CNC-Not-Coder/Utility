@@ -8,6 +8,7 @@ namespace Client
         public int m_ActorId = 0;
         public int m_LogicObjectId = 0;
         public int CampId = 0;
+        public float Blood = 0;
         public int GfxStateFlag = 0;
         public int SummonOwnerActorId = -1;
         public int SummonOwnerSkillId = -1;

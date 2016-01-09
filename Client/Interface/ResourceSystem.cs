@@ -5,9 +5,12 @@ namespace Client
 {
     public class ResourceSystem
     {
-        internal static GameObject NewObject(string m_Prefab, float liveTime)
+        internal static GameObject NewObject(string prefab, float liveTime)
         {
-            throw new NotImplementedException();
+            UnityEngine.Object res = Resources.Load(prefab);
+            GameObject ret = GameObject.Instantiate(res) as GameObject;
+            GameObject.Destroy(ret, liveTime);
+            return ret;
         }
 
         internal static void RecycleObject(GameObject effect)
@@ -15,9 +18,9 @@ namespace Client
             throw new NotImplementedException();
         }
 
-        internal static AudioClip GetSharedResource(string random_audio)
+        internal static UnityEngine.Object GetSharedResource(string prefab)
         {
-            throw new NotImplementedException();
+            return Resources.Load(prefab);
         }
     }
 }

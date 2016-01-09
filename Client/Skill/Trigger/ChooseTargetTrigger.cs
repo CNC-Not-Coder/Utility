@@ -47,7 +47,7 @@ namespace Client.SkillTrigger
             List<GameObject> area_objects = TriggerUtil.FindTargetInSector(center, m_Radius,
                                                                            obj.transform.forward,
                                                                            obj.transform.position, m_Degree);
-            List<GameObject> filted_objects = FiltStateObjects(TriggerUtil.FiltEnimy(obj, area_objects));
+            List<GameObject> filted_objects = FiltStateObjects(TriggerUtil.FiltEnemy(obj, area_objects));
             GameObject target = TriggerUtil.GetObjectByPriority(obj, filted_objects,
                                                                 m_DistancePriority, m_DegreePriority,
                                                                 m_Radius, m_Degree);

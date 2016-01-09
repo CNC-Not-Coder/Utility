@@ -48,6 +48,7 @@
     <Compile Include="SkillInstance\SkillConfigManager.cs" />
     <Compile Include="SkillInstance\SkillInstance.cs" />
     <Compile Include="SkillInstance\SkillTrigerManager.cs" />
+    <Compile Include="Support\GlobalVariables.cs" />
     <Compile Include="Support\LinkedListDictionary.cs" />
     <Compile Include="Support\Logger.cs" />
     <Compile Include="Support\MyAction.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Support\TaskDispatcher\MyThread.cs" />
     <Compile Include="Support\TaskDispatcher\ObjectPool.cs" />
     <Compile Include="Support\TaskDispatcher\PoolAllocatedAction.cs" />
+    <Compile Include="Support\TimeUtility.cs" />
     <Compile Include="Support\TypedDataCollection.cs" />
   </ItemGroup>
   <ItemGroup />
