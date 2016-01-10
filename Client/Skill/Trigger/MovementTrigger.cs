@@ -203,7 +203,7 @@ namespace Client.SkillTrigger
             }
             word_target_pos = m_StartTransform.transform.TransformPoint(local_motion);
             TriggerUtil.MoveObjTo(obj, word_target_pos);
-            LogicSystem.NotifyGfxUpdatePosition(obj, word_target_pos.x, word_target_pos.y, word_target_pos.z);
+            TriggerUtil.UpdatePosition(obj, word_target_pos.x, word_target_pos.y, word_target_pos.z);
             return (speed_vect + accel_vect * time);
         }
 
@@ -249,7 +249,7 @@ namespace Client.SkillTrigger
                     {
                         obj.transform.position = targetPos;
                     }
-                    LogicSystem.NotifyGfxUpdatePosition(obj, targetPos.x, targetPos.y, targetPos.z);
+                    TriggerUtil.UpdatePosition(obj, targetPos.x, targetPos.y, targetPos.z);
                     return true;
                 }
                 else
@@ -325,7 +325,7 @@ namespace Client.SkillTrigger
                     {
                         obj.transform.position = targetPos;
                     }
-                    LogicSystem.NotifyGfxUpdatePosition(obj, targetPos.x, targetPos.y, targetPos.z);
+                    TriggerUtil.UpdatePosition(obj, targetPos.x, targetPos.y, targetPos.z);
                     return true;
                 }
                 else

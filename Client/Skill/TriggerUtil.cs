@@ -9,6 +9,7 @@ namespace Client.SkillTrigger
     /// 在这里封装LogicSystem和GfxSystem的接口
     /// LogicSystem和GfxSystem只提供基础接口
     /// 这里全是对基础接口的封装以及帮助方法
+    /// 这里的函数都只能在Gfx线程使用
     /// </summary>
     class TriggerUtil
     {
@@ -85,6 +86,11 @@ namespace Client.SkillTrigger
                     gfx_root.SendMessage("EndShake");
                 }
             }
+        }
+
+        public static Transform FindChildRecursive(Transform transform, string attachPath)
+        {
+            return GfxSystem.Instance.FindChildRecursive(transform, attachPath);
         }
 
         internal static float GetObjFaceDir(GameObject obj)
@@ -283,6 +289,14 @@ namespace Client.SkillTrigger
                 return;
             }
             LogicSystem.NotifyGfxUpdatePosition(obj, obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
+        }
+        internal static void UpdatePosition(GameObject obj, float x, float y, float z)
+        {
+            LogicSystem.NotifyGfxUpdatePosition(obj, x, y, z);
+        }
+        internal static void UpdatePosition(GameObject obj, float x, float y, float z, float rx, float ry, float rz)
+        {
+            LogicSystem.NotifyGfxUpdatePosition(obj, x, y, z, rx, ry, rz);
         }
 
         internal static void MoveObjTo(GameObject obj, Vector3 position)

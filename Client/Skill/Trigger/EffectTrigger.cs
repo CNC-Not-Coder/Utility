@@ -73,7 +73,7 @@ namespace Client.SkillTrigger
                     if (null != effectObj)
                     {
                         TriggerUtil.SetObjVisible(effectObj, true);
-                        Transform bone = LogicSystem.FindChildRecursive(obj.transform, m_AttachPath);
+                        Transform bone = TriggerUtil.FindChildRecursive(obj.transform, m_AttachPath);
                         if (null != bone)
                         {
                             effectObj.transform.parent = bone;

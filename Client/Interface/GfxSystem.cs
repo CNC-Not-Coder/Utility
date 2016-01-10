@@ -38,5 +38,30 @@ namespace Client
         {
             TickImpl();
         }
+        public Transform FindChildRecursive(Transform parent, string bonePath)
+        {
+            Transform t = parent.Find(bonePath);
+            if (null != t)
+            {
+                return t;
+            }
+            else
+            {
+                int ct = parent.childCount;
+                for (int i = 0; i < ct; ++i)
+                {
+                    t = FindChildRecursive(parent.GetChild(i), bonePath);
+                    if (null != t)
+                    {
+                        return t;
+                    }
+                }
+            }
+            return null;
+        }
+        public static object SyncLock
+        {
+            get { return s_Instance.m_syncLock; }
+        }
     }
 }

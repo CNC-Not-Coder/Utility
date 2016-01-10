@@ -223,5 +223,6 @@ namespace Client
         private LinkedListDictionary<int, GameObjectInfo> m_GameObjects = new LinkedListDictionary<int, GameObjectInfo>();
         private MyDictionary<GameObject, int> m_GameObjectIds = new MyDictionary<GameObject, int>();
         private AsyncActionProcessor m_GfxInvoker = new AsyncActionProcessor();
+        private object m_syncLock = new object();
     }
 }
