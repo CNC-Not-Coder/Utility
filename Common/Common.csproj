@@ -39,7 +39,11 @@
     <Compile Include="Define\EntityDefine.cs" />
     <Compile Include="GameObjects\CharacterInfo.cs" />
     <Compile Include="GameObjects\ImpactInfo.cs" />
+    <Compile Include="GameObjects\NpcInfo.cs" />
+    <Compile Include="GameObjects\NpcManager.cs" />
     <Compile Include="GameObjects\SceneContextInfo.cs" />
+    <Compile Include="GameObjects\UserInfo.cs" />
+    <Compile Include="GameObjects\UserManager.cs" />
     <Compile Include="ImpactSystem\IImpactLogic.cs" />
     <Compile Include="ImpactSystem\ImpactLogicManager.cs" />
     <Compile Include="ImpactSystem\ImpactLogic\ImpactLogic_General.cs" />

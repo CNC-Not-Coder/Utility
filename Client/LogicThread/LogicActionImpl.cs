@@ -1,16 +1,25 @@
 ﻿using System;
+using MyUtility;
+
 
 namespace Client
 {
     /// <summary>
     /// 负责实现逻辑线程LoigcSystem对应接口的实现
-    /// 本类所有方法都在逻辑线程中运行
+    /// 本类所有方法都在 逻辑线程 中运行
     /// </summary>
     class LogicActionImpl
     {
         internal static void OnGfxHitTarget(int id, int impactId, int targetId, int hitCount, int skillId, int duration, float x, float y, float z, float dir)
         {
-            throw new NotImplementedException();
+            CharacterInfo src = WorldSystem.Instance.GetCharacterById(id);
+            CharacterInfo target = WorldSystem.Instance.GetCharacterById(targetId);
+            if (null != src && null != target)
+            {
+                //TODO:这里可能需要通知服务器广播
+                ScriptRuntime.Vector3 srcPos = new ScriptRuntime.Vector3(x, y, z);
+                ImpactSystem.Instance.SendImpactToCharacter(src, impactId, targetId, skillId, duration, srcPos, dir);
+            }
         }
 
         internal static void OnGfxSummonNpc(int owner_id, int owner_skill_id, int npc_type_id, string modelPrefab, int skillid, float x, float y, float z)

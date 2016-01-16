@@ -37,7 +37,8 @@ namespace MyUtility
                     obj.RemoveImpact(info.m_ImpactId);
                 }
             }
-            obj.CleanupImpactInfoForCheck(TimeUtility.GetServerMilliseconds(), 5000);//用于校验的impact比正常时间晚5秒清除
+            //这个暂时不要
+            //obj.CleanupImpactInfoForCheck(TimeUtility.GetServerMilliseconds(), 5000);//用于校验的impact比正常时间晚5秒清除
         }
 
         public bool SendImpactToCharacter(CharacterInfo sender, int impactId, int targetId, int skillId, int duration, Vector3 srcPos, float srcDir)
