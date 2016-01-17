@@ -63,6 +63,12 @@ namespace Client
                 Logger.Info("NotifyGfxMoveControlStart:{0}, can't find object !", obj.name);
             }
         }
+
+        internal static void NotifyGfxAnimationFinish(GameObject sender, bool v)
+        {
+            throw new NotImplementedException();
+        }
+
         public static void NotifyGfxMoveControlFinish(GameObject obj, int id, bool isSkill)
         {
             SharedGameObjectInfo info = GfxSystem.Instance.GetSharedGameObjectInfo(obj);
@@ -84,6 +90,11 @@ namespace Client
             {
                 Logger.Info("NotifyGfxMoveControlFinish:{0}, can't find object !", obj.name);
             }
+        }
+
+        internal static void NotifyGfxAnimationStart(GameObject obj, bool v)
+        {
+            throw new NotImplementedException();
         }
 
         public static void NotifyGfxDestroySummonObject(GameObject obj)

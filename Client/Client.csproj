@@ -51,11 +51,12 @@
     <Compile Include="LogicThread\LogicActionImpl.cs" />
     <Compile Include="LogicThread\WorldSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Skill\ColliderScript.cs" />
-    <Compile Include="Skill\ColliderTriggerUtility.cs" />
-    <Compile Include="Skill\ScriptableDataUtility.cs" />
-    <Compile Include="Skill\SkillDamageManager.cs" />
-    <Compile Include="Skill\TriggerUtil.cs" />
+    <Compile Include="Skill\Util\ColliderScript.cs" />
+    <Compile Include="Skill\Util\ColliderTriggerUtility.cs" />
+    <Compile Include="Skill\GfxSkillSystem.cs" />
+    <Compile Include="Skill\Util\ScriptableDataUtility.cs" />
+    <Compile Include="Skill\Util\SkillDamageManager.cs" />
+    <Compile Include="Skill\Util\TriggerUtil.cs" />
     <Compile Include="Skill\Trigger\AnimationTriger.cs" />
     <Compile Include="Skill\Trigger\CameraTrigger.cs" />
     <Compile Include="Skill\Trigger\CheckOnGroundTrigger.cs" />
