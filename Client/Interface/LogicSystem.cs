@@ -166,5 +166,9 @@ namespace Client
                 }
             }
         }
+        public static void NotifyGfxStopSkill(GameObject sender, int skillId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

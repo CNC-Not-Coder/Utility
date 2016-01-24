@@ -60,7 +60,6 @@ namespace Client
                 if (!exist || info.SkillInst.IsFinished)
                 {
                     StopSkillInstance(info, false);
-                    m_SkillLogicInfos.RemoveAt(ix);
                 }
             }
         }
@@ -113,6 +112,8 @@ namespace Client
             LogicSystem.NotifyGfxStopSkill(info.Sender, info.SkillId);
 
             RecycleSkillInstance(info.Info);
+
+            m_SkillLogicInfos.Remove(info);
         }
         private SkillInstanceInfo NewSkillInstance(int skillId)
         {
@@ -151,15 +152,38 @@ namespace Client
             }
         }
 
-        private void AddSkillInstanceInfoToPool(int skillId, SkillInstanceInfo res)
+        private void AddSkillInstanceInfoToPool(int skillId, SkillInstanceInfo info)
         {
-            throw new NotImplementedException();
+            if (m_SkillInstancePool.ContainsKey(skillId))
+            {
+                List<SkillInstanceInfo> infos = m_SkillInstancePool[skillId];
+                infos.Add(info);
+            }
+            else
+            {
+                List<SkillInstanceInfo> infos = new List<SkillInstanceInfo>();
+                infos.Add(info);
+                m_SkillInstancePool.Add(skillId, infos);
+            }
         }
         private SkillInstanceInfo GetUnusedSkillInstanceInfoFromPool(int skillId)
         {
-            throw new NotImplementedException();
+            SkillInstanceInfo info = null;
+            if (m_SkillInstancePool.ContainsKey(skillId))
+            {
+                List<SkillInstanceInfo> infos = m_SkillInstancePool[skillId];
+                int ct = infos.Count;
+                for (int ix = 0; ix < ct; ++ix)
+                {
+                    if (!infos[ix].m_IsUsed)
+                    {
+                        info = infos[ix];
+                        break;
+                    }
+                }
+            }
+            return info;
         }
-
         private void RecycleSkillInstance(SkillInstanceInfo info)
         {
             info.m_SkillInstance.Reset();
